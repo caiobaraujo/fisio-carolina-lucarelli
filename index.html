@@ -12,10 +12,25 @@
       }
       gtag("js", new Date());
       gtag("config", "AW-17964789018");
+      gtag("config", "G-LK5GKYCEFX");
+
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-17964789018/uzt9CP2NoI4cEJrao_ZC",
+          value: 1.0,
+          currency: "BRL",
+          event_callback: callback,
+        });
+        return false;
+      }
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="favicon.png" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
@@ -79,6 +94,8 @@
         font-size: 1.1rem;
         transition: transform 0.2s;
         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        cursor: pointer;
+        border: none;
       }
       .btn:hover {
         transform: scale(1.05);
@@ -181,8 +198,12 @@
         </p>
         <a
           class="btn"
-          href="https://wa.me/5532988962691?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia%20domiciliar."
-          target="_blank"
+          onclick="
+            return gtag_report_conversion(
+              'https://wa.me/5532988962691?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia%20domiciliar.',
+            );
+          "
+          href="javascript:void(0);"
         >
           Agendar Avaliação Particular
         </a>
@@ -245,13 +266,22 @@
           Atendimentos particulares com foco total no paciente.
         </p>
         <br />
-        <a class="btn" href="https://wa.me/5532988962691" target="_blank"
+        <a
+          class="btn"
+          onclick="
+            return gtag_report_conversion('https://wa.me/5532988962691');
+          "
+          href="javascript:void(0);"
           >Consultar Horários Disponíveis</a
         >
       </div>
     </div>
 
-    <a class="whatsapp-fixo" href="https://wa.me/5532988962691" target="_blank">
+    <a
+      class="whatsapp-fixo"
+      onclick="return gtag_report_conversion('https://wa.me/5532988962691');"
+      href="javascript:void(0);"
+    >
       <span style="display: none">WhatsApp</span>
       <svg viewBox="0 0 32 32" style="width: 35px; height: 35px; fill: #fff">
         <path
